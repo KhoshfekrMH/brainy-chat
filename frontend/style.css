@@ -16,7 +16,6 @@ body {
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  background-image: url('../images/logo.png'); /* Example usage of a general image */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -33,7 +32,6 @@ body {
   border: none;
   padding: 10px;
   flex: 0 0 40px;
-  background: url('../icons/chat-icon.png') no-repeat scroll 7px 7px; /* Example usage of an icon */
   padding-left: 30px;
 }
 
