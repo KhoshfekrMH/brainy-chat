@@ -1,0 +1,15 @@
+{
+  "name": "brainy-chat",
+  "version": "1.0.0",
+  "description": "encrypted chat between server and browser",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Khoshfekr",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "socket.io": "^4.7.5"
+  }
+}
