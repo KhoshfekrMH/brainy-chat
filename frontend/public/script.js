@@ -3,9 +3,19 @@ const messageContainer = document.getElementById('chat-box');
 const messageForm = document.getElementById('chat-container');
 const messageInput = document.getElementById('message-input');
 
-const username = prompt('what is your name?');
-appendMessage(`${username} joined chat`);
-socket.emit('new-user', username);
+if (messageForm != null) {
+  const username = prompt('what is your name?');
+  appendMessage(`${username} joined chat`);
+  socket.emit('new-user', username);
+
+  messageForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const message = messageInput.value;
+    appendMessage(`You: ${message}`);
+    socket.emit('send-chat-message', message);
+    messageInput.value = '';
+  });
+}
 
 function appendMessage(message) {
   const messageElement = document.createElement('div');
@@ -23,12 +33,4 @@ socket.on('user-connected', (username) => {
 
 socket.on('user-disconnected', (username) => {
   appendMessage(`${username} disconnected`);
-});
-
-messageForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const message = messageInput.value;
-  appendMessage(`You: ${message}`);
-  socket.emit('send-chat-message', message);
-  messageInput.value = '';
 });
