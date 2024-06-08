@@ -1,4 +1,14 @@
-const io = require('socket.io')(4000);
+const express = require('express');
+const path = require('path');
+const app = express();
+const server = require('http').Server(app);
+
+app.set('views', './views');
+app.set('view engine', 'ejs');
+app.use(express.static(path.join(__dirname, '../frontend/public')));
+app.use(express.urlencoded({ extended: true }));
+
+const io = require('socket.io')(server);
 
 console.log('Listening on port 4000...');
 
