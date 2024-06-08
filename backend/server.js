@@ -9,7 +9,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, '../frontend/public/')));
 app.use(express.urlencoded({ extended: true }));
 
-const rooms = {};
+const rooms = { name: {} };
 
 app.get('/', (req, res) => {
   res.render('index', { rooms: rooms });
