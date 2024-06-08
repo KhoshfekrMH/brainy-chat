@@ -2,13 +2,24 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const server = require('http').Server(app);
+const io = require('socket.io')(server);
 
-app.set('views', './views');
+app.set('views', '../frontend/views');
 app.set('view engine', 'ejs');
-app.use(express.static(path.join(__dirname, '../frontend/public')));
+app.use(express.static(path.join(__dirname, '../frontend/public/')));
 app.use(express.urlencoded({ extended: true }));
 
-const io = require('socket.io')(server);
+const rooms = {};
+
+app.get('/', (req, res) => {
+  res.render('index', { rooms: rooms });
+});
+
+app.get('/:room', (req, res) => {
+  res.render('room', { roomId: req.params.room });
+});
+
+server.listen(3000);
 
 console.log('Listening on port 4000...');
 
