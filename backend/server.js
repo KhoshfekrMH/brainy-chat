@@ -24,12 +24,15 @@ app.post('/room', (req, res) => {
 });
 
 app.get('/:room', (req, res) => {
+  if (rooms[req.params.room] == null) {
+    return res.redirect('/');
+  }
   res.render('room', { roomId: req.params.room });
 });
 
 server.listen(3000);
 
-console.log('Listening on port 4000...');
+console.log('Listening on port 3000...');
 
 const users = {};
 
