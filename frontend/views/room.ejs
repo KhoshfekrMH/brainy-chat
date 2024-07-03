@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="favicon.ico?=v" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" href="favicon.ico?=v"/>
     <title>Brainy Chat</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <script>
+        const roomName = "<%= roomName %>";
+    </script>
+    <link rel="stylesheet" href="/css/style.css"/>
     <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
     <script defer src="script.js"></script>
-  </head>
-  <body>
-    <img src="./images/header.png" alt="Brainy Chat Logo" />
-    <form id="chat-container">
-      <div class="chat-box" id="chat-box"></div>
-      <input type="text" id="message-input" placeholder="Type a message..." />
-      <button id="send-button">Send</button>
-    </form>
-  </body>
+</head>
+<body>
+<img src="./images/header.png" alt="Brainy Chat Logo"/>
+<form id="chat-container">
+    <div class="chat-box" id="chat-box"></div>
+    <input type="text" id="message-input" placeholder="Type a message..."/>
+    <button id="send-button">Send</button>
+</form>
+</body>
 </html>
