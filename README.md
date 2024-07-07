@@ -1,7 +1,3 @@
-Sure, here’s the updated README without the encryption part:
-
----
-
 # Brainy Chat
 
 ![Overview.png](Overview.png)
