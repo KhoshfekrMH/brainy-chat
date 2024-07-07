@@ -36,7 +36,7 @@ Brainy Chat is a real-time chat application with support for multiple chat rooms
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/brainy-chat.git
+   git clone https://github.com/KhoshfekrMH/brainy-chat
    cd brainy-chat
    ```
 
